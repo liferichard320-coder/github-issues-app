@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IssueFlow</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <div class="logo">IssueFlow</div>
+        <div class="topbar-icons">
+          <button class="icon-button" aria-label="Search">⌕</button>
+          <button class="icon-button" aria-label="Notifications">🔔</button>
+        </div>
+      </header>
+
+      <main class="page">
+        <section class="card hero-card">
+          <div class="section-heading">
+            <h3>Assigned to you</h3>
+            <span class="live-badge">LIVE</span>
+          </div>
+
+          <div class="hero-metrics">
+            <div>
+              <p class="label">Open</p>
+              <p class="usage-value" id="open-count">12</p>
+            </div>
+            <div>
+              <p class="label">Due soon</p>
+              <p class="usage-value" id="due-soon">4</p>
+            </div>
+          </div>
+
+          <div class="creator-row">
+            <div class="avatar">R</div>
+            <div>
+              <p class="creator-name">Richard</p>
+              <p class="meta">Product engineer · 3 teams</p>
+            </div>
+          </div>
+
+          <p class="caption">Prioritize blocking bugs and shipping fixes before the next release checkpoint.</p>
+
+          <div class="action-row">
+            <button class="primary-btn" id="sync-btn">Sync issues</button>
+            <button id="review-btn">Review</button>
+          </div>
+        </section>
+
+        <section class="card issue-card">
+          <div class="section-heading">
+            <h3>Issues</h3>
+            <button class="filter-chip">Today</button>
+          </div>
+          <div id="issue-list" class="issue-list" aria-live="polite"></div>
+        </section>
+
+        <section class="card storage-card">
+          <div class="storage-header">
+            <h3>Workload</h3>
+            <span class="storage-pill">72%</span>
+          </div>
+
+          <div class="storage-summary">
+            <div>
+              <p class="label">Completed</p>
+              <p class="usage-value">18</p>
+            </div>
+            <div>
+              <p class="label">Remaining</p>
+              <p class="usage-value">7</p>
+            </div>
+          </div>
+
+          <div class="storage-bar" aria-label="Workload progress">
+            <div class="storage-fill" id="storage-fill"></div>
+          </div>
+
+          <div class="storage-meta">
+            <span>Updated today</span>
+            <span>8h left</span>
+          </div>
+
+          <div class="storage-actions">
+            <button>Export</button>
+            <button>Details</button>
+          </div>
+        </section>
+
+        <div class="app-install-wrap">
+          <button class="install-btn" id="download-btn">Download app</button>
+        </div>
+      </main>
+
+      <nav class="bottom-nav" aria-label="Main navigation">
+        <button class="nav-item active" aria-label="Dashboard">
+          <span>⌂</span>
+          <small>Home</small>
+        </button>
+        <button class="nav-item" aria-label="Assigned">
+          <span>✓</span>
+          <small>Issues</small>
+        </button>
+        <button class="nav-item" aria-label="Projects">
+          <span>◫</span>
+          <small>Projects</small>
+        </button>
+        <button class="nav-item" aria-label="Profile">
+          <span>◉</span>
+          <small>Profile</small>
+        </button>
+      </nav>
+    </div>
+
+    <div id="toast" class="toast" role="status" aria-live="polite">Updated</div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
