@@ -1,0 +1,1 @@
+import { defineConfig } from 'vite';\n\nexport default defineConfig({\n  server: {\n    host: '0.0.0.0',\n    port: 3000\n  },\n  build: {\n    outDir: 'dist',\n    minify: 'terser'\n  }\n});\n
